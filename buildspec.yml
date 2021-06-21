@@ -1,0 +1,23 @@
+version: 0.2
+        
+phases:
+  install:
+    runtime-versions:
+      java: correto11
+  pre_build:
+    commands:
+      - echo build started on 'date'
+      - echo building JAR file
+      - mvn clean
+      - mvn compile
+      - mvn package
+  post_build:
+    commands:
+      - echo Build completed
+      - mv target/*.jar app.jar
+      - dir
+
+artifacts:
+  files:
+    - app.jar
+  discard-paths: yes
