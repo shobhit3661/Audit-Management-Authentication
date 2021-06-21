@@ -8,7 +8,6 @@ phases:
     commands:
       - echo build started on 'date'
       - echo building JAR file
-      - mvn clean
       - mvn compile
       - mvn package
   post_build:
